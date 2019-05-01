@@ -1,0 +1,20 @@
+
+public class DogDoorSimulator {
+	
+	public static void main(String as[])
+	{
+			DogDoor door=new DogDoor();
+			Remote rem=new Remote(door);
+			
+			System.out.println("Fido wants to go outside");
+			rem.pressButton();
+			System.out.println("Fido wants is outside");
+			rem.pressButton();
+			System.out.println("Fido wants to get inside");
+			rem.pressButton();
+			System.out.println("Fido wants is inside");
+			rem.pressButton();
+			
+	}
+
+}

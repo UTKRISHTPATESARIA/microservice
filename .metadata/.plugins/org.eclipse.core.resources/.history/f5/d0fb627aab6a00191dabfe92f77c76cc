@@ -1,0 +1,59 @@
+package course;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class CourseController {
+	
+	@Autowired  //DEPENDECY INJECTION.
+	 private CourseService s;
+	
+@RequestMapping("/course")
+
+public List<Course> welcome()
+{
+	return s.getallcourse();
+	//Automatically gets converted to JSON format.
+}
+ //Mapping id by putting into {...} and using the annotation path variable it passes the id to the function parameter.
+@RequestMapping("/course/{id}")
+public Optional<Course> gettopic1(@PathVariable String id)
+{
+	return s.getcourse(id);
+}
+
+//Implementing a post method.
+
+@RequestMapping(method=RequestMethod.POST,value="/course")
+
+public void addtopic(@RequestBody Course wel) //JSON FORMAT.
+{
+	s.addcourse(wel);
+}
+
+
+@RequestMapping(method=RequestMethod.PUT,value="/course/{id}")
+
+public void updatetopic(@RequestBody Course wel, @PathVariable String id) //JSON FORMAT.
+{
+	s.updatecourse(id,wel);
+}
+
+@RequestMapping(method=RequestMethod.DELETE,value="/course/{id}")
+
+public void updatetopic(@PathVariable String id) //JSON FORMAT.
+{
+	s.deletecourse(id);
+}
+}
+
+//Spring to manage this bean and create an instance.
+//@Component

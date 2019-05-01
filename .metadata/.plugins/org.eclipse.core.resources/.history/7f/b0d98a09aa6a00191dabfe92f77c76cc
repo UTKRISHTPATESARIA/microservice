@@ -1,0 +1,73 @@
+package course;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+//Creating a business service.
+@Service
+public class CourseService {
+
+	@Autowired
+	private CoursecRepository topicrepo;
+	
+		List<Course> w= new ArrayList<>(Arrays.asList(
+				
+				new Course("A1","BB","CC"),
+				new Course("B2","BB","CC"),
+				new Course("A3","BB","CC"),
+				new Course("A4","BB","CC"),
+				new Course("A5","BB","CC"),
+				new Course("A6","BB","CC"),
+				new Course("A7","BB","CC")
+				));
+		public void addtopic(Course w1)
+		{
+			//w.add(w1);
+			topicrepo.save(w1);
+		}
+				
+		public List<Course> gettopic()
+		{
+			//return w;
+			//Creating a list to iterate over all available entities in the table using findAll().
+			
+			List<Course> topics=new ArrayList<>();
+			topicrepo.findAll().forEach(topics::add);
+			return topics;
+			
+		}
+		
+		public Optional<Course> gettopic1(String id)
+		{
+			//return w.stream().filter(t -> t.getId().equals(id)).findFirst().get();
+			
+			return  topicrepo.findById(id);
+		}
+
+		//Loop through the topics available and then after finding the id update the parameters.
+		
+		public void updatetopic(String id, Course wel) {
+			
+			/*for(int i=0;i<w.size();i++)
+			{
+				Welcomes w1=w.get(i);
+				if(w1.getId().equals(id)) {
+					w.set(i, wel);
+					return;
+				}
+			}*/
+			
+			topicrepo.save(wel);
+		}
+		
+		public void deleteTopic(String id)
+		{
+			//w.removeIf(t -> t.getId().equals(id));
+			topicrepo.deleteById(id);
+		}
+}

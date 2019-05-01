@@ -1,0 +1,13 @@
+package course;
+
+import java.util.List;
+
+import org.springframework.data.repository.CrudRepository;
+
+public interface CoursecRepository extends CrudRepository<Course,String>{
+	
+	public List<Course> findByTopicId(String topicid);
+	
+		
+
+}

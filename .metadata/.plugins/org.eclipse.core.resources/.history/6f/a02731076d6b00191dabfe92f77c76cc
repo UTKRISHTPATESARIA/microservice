@@ -1,0 +1,5 @@
+package com.movie.movieinfoservice.model;
+
+public class Movie {
+
+}

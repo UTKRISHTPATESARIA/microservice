@@ -1,0 +1,5 @@
+package com.movie.movieratingservice.models;
+
+public class Rating {
+
+}

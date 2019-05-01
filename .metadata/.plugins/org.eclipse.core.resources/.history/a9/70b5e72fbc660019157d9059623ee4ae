@@ -1,0 +1,26 @@
+package stockprice;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class WelcomeController {
+	
+	@Autowired  //DEPENDECY INJECTION.
+	 private TopicService s;
+	
+@RequestMapping("/welcome")
+
+public List<Welcomes> welcome()
+{
+	return s.gettopic();
+	//Automatically gets converted to JSON format.
+}
+
+}
+
+//Spring to manage this bean and create an instance.
+//@Component

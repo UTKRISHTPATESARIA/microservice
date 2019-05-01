@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;stockprice&apos; to &apos;databases/src/main/java&apos;&#x0D;&#x0A;- Original project: &apos;stockprice&apos;&#x0D;&#x0A;- Destination element: &apos;databases/src/main/java&apos;&#x0D;&#x0A;- Original element: &apos;stockprice/src/main/java/stockprice&apos;" description="Copy package" destination="=databases/src\/main\/java" element1="/src\/main\/java&lt;stockprice" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1556557034320" version="1.0"/>
+</session>

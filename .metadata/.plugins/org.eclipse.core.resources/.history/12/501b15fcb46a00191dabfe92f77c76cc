@@ -1,0 +1,9 @@
+package course;
+
+import org.springframework.data.repository.CrudRepository;
+
+public interface CoursecRepository extends CrudRepository<Course,String>{
+	
+	
+
+}

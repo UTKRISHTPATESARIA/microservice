@@ -1,0 +1,9 @@
+package com.jpadatabase.databases.stockprice;
+
+import org.springframework.data.repository.CrudRepository;
+
+public interface TopicRepository extends CrudRepository<Welcomes,String>{
+	
+	
+
+}
